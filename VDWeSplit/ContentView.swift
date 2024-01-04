@@ -14,10 +14,13 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             Form {
-                ForEach (personens, id: \.self) {
-                    Text (String($0))
+                Picker("Select Your Person", selection: $selectPerson) {
+                    ForEach(personens, id: \.self) {
+                        Text($0)
+                    }
                 }
             }
+            .navigationTitle("Select a Parsone")
         }
     }
 }
